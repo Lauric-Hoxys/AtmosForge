@@ -1,0 +1,8 @@
+name: AtmosForge
+version: '1.0-SNAPSHOT'
+main: fr.hoxys.plugin.atmosForge.Main
+api-version: '1.21'
+prefix: [ EnhancedSurvival ]
+load: STARTUP
+authors: [ Hoxys ]
+description: Plugin for TalionFuz
