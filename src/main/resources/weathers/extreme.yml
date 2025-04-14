@@ -1,0 +1,294 @@
+# ===================================
+# Extreme Weather Configuration for AtmosForge
+# ===================================
+
+# Common settings for all extreme phenomena
+common:
+  category: "EXTREME"
+  default_duration: 45  # minutes
+  visual_effects: true
+  sound_effects: true
+  particle_effects: true
+  player_effects: true
+  world_effects: true
+  warning_message: true
+  warning_sound: true
+
+# Tropical Cyclone
+tropical_cyclone:
+  id: "tropical_cyclone"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.7
+    fog_density: 0.7
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 30
+        spread: 25.0
+        height: 20.0
+        speed: 0.2
+      - type: "CLOUD"
+        count: 10
+        spread: 40.0
+        height: 30.0
+        speed: 0.1
+        pattern: "SPIRAL"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 1.0
+        pitch: 0.8
+        interval: 20
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.9
+        pitch: 0.7
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "BREAK"
+        blocks: ["LEAVES", "FLOWERS"]
+        chance: 0.1
+      - type: "PUSH"
+        blocks: ["SAND", "GRAVEL", "SNOW"]
+        chance: 0.05
+        strength: 3
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.3
+        amplifier: 1
+        duration: 100
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 2.0
+        interval: 200
+        message: "effects.wind_damage"
+      - type: "PUSH"
+        chance: 0.4
+        strength: 0.8
+        direction: "OUTWARD"
+
+  world_effects:
+    entity_damage: true
+    damage_amount: 2
+    flying_items: true
+    water_level_increase: 2
+    mob_spawn_modifier: 0.2
+    clear_drops_chance: 0.3
+
+# Firestorm
+firestorm:
+  id: "firestorm"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.4
+    fog_density: 0.6
+    fog_color: "FF4400"
+
+  particles:
+    enabled: true
+    types:
+      - type: "FLAME"
+        count: 20
+        spread: 30.0
+        height: 15.0
+        speed: 0.05
+      - type: "SMOKE_LARGE"
+        count: 15
+        spread: 40.0
+        height: 25.0
+        speed: 0.03
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_FIRE_AMBIENT"
+        volume: 0.8
+        pitch: 0.9
+        interval: 20
+      - sound: "ENTITY_GENERIC_BURN"
+        volume: 0.4
+        pitch: 1.0
+        interval: 60
+        chance: 0.2
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "FIRE_START"
+        blocks: ["GRASS_BLOCK", "LEAVES", "WOOD", "WOOL"]
+        chance: 0.02
+      - type: "BURN"
+        blocks: ["GRASS_BLOCK", "LEAVES"]
+        chance: 0.05
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "FIRE"
+        chance: 0.05
+        duration: 40
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 1.0
+        interval: 100
+        message: "effects.heat_damage"
+      - type: "HUNGER"
+        chance: 0.2
+        amplifier: 1
+        duration: 200
+
+  world_effects:
+    only_in_hot_biomes: true
+    fire_spread_rate: 2.0
+    smoke_column_height: 100
+    entity_fire_chance: 0.1
+
+# Flash Flood
+flash_flood:
+  id: "flash_flood"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.5
+    fog_density: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_SPLASH"
+        count: 20
+        spread: 15.0
+        height: 2.0
+        speed: 0.3
+        y_offset: -1.0
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.7
+        pitch: 1.0
+        interval: 20
+      - sound: "BLOCK_WATER_AMBIENT"
+        volume: 1.0
+        pitch: 0.8
+        interval: 10
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "WATER_RISE"
+        blocks: ["AIR"]
+        chance: 0.1
+        only_below_y: 64
+      - type: "WASH_AWAY"
+        blocks: ["DIRT", "SAND", "GRAVEL", "CROPS"]
+        chance: 0.05
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.3
+        amplifier: 2
+        duration: 100
+        y_dependant: true
+      - type: "DAMAGE"
+        chance: 0.05
+        amount: 3.0
+        interval: 40
+        message: "You are swept away by the flood!"
+        conditions: "IN_WATER"
+      - type: "PUSH"
+        chance: 0.4
+        strength: 1.0
+        direction: "CURRENT"
+
+  world_effects:
+    water_current_strength: 2.0
+    item_float_away: true
+    boat_speed_modifier: 2.0
+    only_in_valleys: true
+    after_heavy_rain: true
+
+# Acid Rain
+acid_rain:
+  id: "acid_rain"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.3
+    fog_density: 0.4
+    fog_color: "AAFF55"
+
+  particles:
+    enabled: true
+    types:
+      - type: "FALLING_SPORE_BLOSSOM"
+        count: 10
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+        color: "AAFF55"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.5
+        pitch: 1.2
+        interval: 40
+      - sound: "BLOCK_CORAL_BLOCK_BREAK"
+        volume: 0.2
+        pitch: 1.5
+        interval: 100
+        chance: 0.1
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        blocks: ["LEAVES", "CROPS", "FLOWERS"]
+        chance: 0.05
+      - type: "CORRODE"
+        blocks: ["COPPER_BLOCK", "IRON_BLOCK", "METAL_DOORS"]
+        chance: 0.02
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 1.0
+        interval: 200
+        message: "effects.acid_damage"
+        conditions: "EXPOSED_TO_SKY"
+      - type: "POISON"
+        chance: 0.05
+        amplifier: 0
+        duration: 100
+
+  world_effects:
+    plant_growth_modifier: 0.5
+    fish_damage: true
+    water_color_modifier: "AAFF55"

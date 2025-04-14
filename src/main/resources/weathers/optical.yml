@@ -1,0 +1,262 @@
+# ===================================
+# Optical Phenomena Configuration for AtmosForge
+# ===================================
+
+# Common settings for all optical phenomena
+common:
+  category: "OPTICAL"
+  default_duration: 30  # minutes
+  visual_effects: true
+  sound_effects: false
+  particle_effects: true
+  player_effects: false
+  rare_chance: 0.05  # Chance for rare optical phenomena to occur after appropriate weather
+
+# Rainbow
+rainbow:
+  id: "rainbow"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: -0.1  # Makes it slightly brighter
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 1000
+        spread: 100.0
+        height: 60.0
+        speed: 0.0
+        colors: ["FF0000", "FF7F00", "FFFF00", "00FF00", "0000FF", "4B0082", "9400D3"]
+        pattern: "ARC"
+        offset_z: 100.0
+        fixed_position: true
+        distance: 200
+
+  sounds:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "LUCK"
+        chance: 0.5
+        amplifier: 0
+        duration: 1200
+        conditions: "LOOK_AT_RAINBOW"
+
+  world_effects:
+    appears_after_rain: true
+    sun_position_dependent: true
+    time_range: [0, 12000]  # Only during day
+
+# Moonbow
+moonbow:
+  id: "moonbow"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: -0.05
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 700
+        spread: 80.0
+        height: 50.0
+        speed: 0.0
+        colors: ["DDDDFF", "BBBBFF", "AAAAFF", "CCFFCC", "CCCCFF", "BBAACC", "CCAADD"]
+        pattern: "ARC"
+        offset_z: 100.0
+        fixed_position: true
+        distance: 200
+        opacity: 0.7
+
+  sounds:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "NIGHT_VISION"
+        chance: 0.3
+        amplifier: 0
+        duration: 600
+        conditions: "LOOK_AT_MOONBOW"
+
+  world_effects:
+    appears_after_rain: true
+    moon_position_dependent: true
+    time_range: [13000, 23000]  # Only at night
+    moon_phase_dependent: true
+    full_moon_only: true
+
+# Halo
+halo:
+  id: "halo"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.1
+    sky_modifier: "HALO"
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 500
+        spread: 40.0
+        height: 150.0
+        speed: 0.0
+        colors: ["FFFFFF", "EEEEEE"]
+        pattern: "CIRCLE"
+        target: "SUN_MOON"
+        radius: 20.0
+        fixed_position: true
+
+  sounds:
+    enabled: false
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    ice_crystals_in_air: true
+    cold_required: true
+    predict_weather_change: true
+    change_chance: 0.7
+    next_weather: ["LIGHT_SNOW", "FOG", "FREEZING_FOG"]
+
+# Sundog
+sundog:
+  id: "sundog"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.05
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 200
+        spread: 10.0
+        height: 150.0
+        speed: 0.0
+        colors: ["FFFFFF", "FFEECC"]
+        pattern: "POINT"
+        target: "SUN"
+        offset_x: 20.0
+        fixed_position: true
+        symmetrical: true
+
+  sounds:
+    enabled: false
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    ice_crystals_in_air: true
+    cold_required: true
+    time_range: [0, 13000]  # Only during day
+    predict_weather_change: true
+    change_chance: 0.5
+    next_weather: ["COLD_WAVE", "MODERATE_SNOW"]
+
+# Light Pillar
+light_pillar:
+  id: "light_pillar"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 300
+        spread: 5.0
+        height: 150.0
+        speed: 0.0
+        colors: ["FFFFFF", "FFEECC"]
+        pattern: "PILLAR"
+        target: "SUN_MOON"
+        fixed_position: true
+
+  sounds:
+    enabled: false
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    ice_crystals_in_air: true
+    cold_required: true
+    appears_at_sunset_sunrise: true
+    time_range: [22000, 24000, 0, 2000]  # Dawn and dusk
+
+# Green Flash
+green_flash:
+  id: "green_flash"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.0
+    sky_color_override: "00FF88"
+    duration_override: 5  # Very short duration in minutes
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 100
+        spread: 10.0
+        height: 100.0
+        speed: 0.0
+        colors: ["00FF88"]
+        pattern: "FLASH"
+        target: "SUN"
+        fixed_position: true
+        duration: 100
+
+  sounds:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "LUCK"
+        chance: 1.0
+        amplifier: 1
+        duration: 24000
+        conditions: "WITNESSED_EVENT"
+
+  world_effects:
+    extremely_rare: true
+    chance_multiplier: 0.1
+    clean_air_required: true
+    only_at_sunset: true
+    time_range: [11500, 12500]  # Just at sunset
+    grants_advancement: true

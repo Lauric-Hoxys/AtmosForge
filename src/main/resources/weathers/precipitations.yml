@@ -1,0 +1,730 @@
+# ===================================
+# Precipitation Phenomena Configuration for AtmosForge
+# ===================================
+
+# Common settings for all precipitation types
+common:
+  category: "PRECIPITATION"
+  default_duration: 60  # minutes
+  visual_effects: true
+  sound_effects: true
+  particle_effects: true
+  player_effects: true
+  block_effects: true
+
+# Light Rain
+light_rain:
+  id: "light_rain"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.1
+    fog_density: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.2
+        pitch: 1.0
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK", "FARMLAND"]
+        chance: 0.1
+      - type: "GROW"
+        blocks: ["CROPS", "SAPLINGS"]
+        chance: 0.005
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    growth_modifier: 1.2
+    fire_extinguish_chance: 0.3
+
+# Moderate Rain
+moderate_rain:
+  id: "moderate_rain"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.2
+    fog_density: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 10
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.4
+        pitch: 1.0
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK", "FARMLAND"]
+        chance: 0.2
+      - type: "EXTINGUISH"
+        blocks: ["FIRE"]
+        chance: 0.5
+      - type: "GROW"
+        blocks: ["CROPS", "SAPLINGS"]
+        chance: 0.01
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.0
+        amplifier: 0
+        duration: 100
+
+  world_effects:
+    growth_modifier: 1.4
+    fire_extinguish_chance: 0.6
+
+# Heavy Rain
+heavy_rain:
+  id: "heavy_rain"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.4
+    fog_density: 0.5
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 20
+        spread: 20.0
+        height: 15.0
+        speed: 0.15
+      - type: "SPLASH"
+        count: 5
+        spread: 10.0
+        height: 0.5
+        speed: 0.1
+        y_offset: -1.0
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.7
+        pitch: 0.9
+        interval: 40
+      - sound: "BLOCK_WATER_AMBIENT"
+        volume: 0.3
+        pitch: 1.0
+        interval: 80
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK", "FARMLAND"]
+        chance: 0.4
+      - type: "EXTINGUISH"
+        blocks: ["FIRE"]
+        chance: 0.8
+      - type: "GROW"
+        blocks: ["CROPS", "SAPLINGS"]
+        chance: 0.02
+      - type: "PUDDLE"
+        blocks: ["STONE", "GRASS_BLOCK", "PATH"]
+        chance: 0.05
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.05
+        amplifier: 0
+        duration: 100
+
+  world_effects:
+    growth_modifier: 1.6
+    fire_extinguish_chance: 0.9
+    flash_flood_chance: 0.02
+    visibility_modifier: 0.7
+
+# Freezing Rain
+freezing_rain:
+  id: "freezing_rain"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.3
+    fog_density: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 10
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+      - type: "SNOWFLAKE"
+        count: 2
+        spread: 20.0
+        height: 15.0
+        speed: 0.05
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.4
+        pitch: 1.1
+        interval: 40
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.1
+        pitch: 1.5
+        interval: 200
+        chance: 0.1
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "ICE_LAYER"
+        blocks: ["STONE", "GRASS_BLOCK", "PATH", "WATER"]
+        chance: 0.05
+      - type: "DAMAGE"
+        blocks: ["CROPS", "FLOWERS"]
+        chance: 0.1
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.2
+        amplifier: 1
+        duration: 100
+      - type: "DAMAGE"
+        chance: 0.01
+        amount: 1.0
+        interval: 300
+        message: "effects.cold_damage"
+
+  world_effects:
+    ice_formation: true
+    slippery_surfaces: true
+    entity_freeze_chance: 0.05
+    temperature_modifier: -0.2
+
+# Sleet
+sleet:
+  id: "sleet"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.2
+    fog_density: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+      - type: "SNOWFLAKE"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.05
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.3
+        pitch: 1.1
+        interval: 40
+      - sound: "BLOCK_SNOW_PLACE"
+        volume: 0.2
+        pitch: 1.2
+        interval: 60
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK"]
+        chance: 0.2
+      - type: "SNOW_LAYER"
+        blocks: ["GRASS_BLOCK", "DIRT"]
+        chance: 0.02
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.05
+        amplifier: 0
+        duration: 60
+
+  world_effects:
+    mixed_precipitation: true
+    temperature_dependent: true
+    transition_weather: true
+
+# Drizzle
+drizzle:
+  id: "drizzle"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.1
+    fog_density: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 3
+        spread: 20.0
+        height: 15.0
+        speed: 0.05
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.1
+        pitch: 1.2
+        interval: 60
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK", "FARMLAND"]
+        chance: 0.05
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    growth_modifier: 1.1
+    fog_likely: true
+    mist_formation_chance: 0.2
+
+# Shower
+shower:
+  id: "shower"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.3
+    fog_density: 0.2
+    duration_override: 30  # Shorter than normal rain
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 15
+        spread: 15.0
+        height: 15.0
+        speed: 0.15
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.5
+        pitch: 1.0
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK", "FARMLAND"]
+        chance: 0.3
+      - type: "EXTINGUISH"
+        blocks: ["FIRE"]
+        chance: 0.7
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    localized: true
+    patchy_coverage: true
+    rainbow_chance: 0.3
+    moves_quickly: true
+
+# Light Snow
+light_snow:
+  id: "light_snow"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.1
+    fog_density: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWFLAKE"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.05
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_SNOW_PLACE"
+        volume: 0.2
+        pitch: 1.0
+        interval: 60
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SNOW_LAYER"
+        blocks: ["GRASS_BLOCK", "DIRT", "STONE"]
+        chance: 0.05
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    snow_accumulation: true
+    temperature_modifier: -0.1
+
+# Moderate Snow
+moderate_snow:
+  id: "moderate_snow"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.1
+    fog_density: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWFLAKE"
+        count: 10
+        spread: 20.0
+        height: 15.0
+        speed: 0.05
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_SNOW_PLACE"
+        volume: 0.3
+        pitch: 1.0
+        interval: 60
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SNOW_LAYER"
+        blocks: ["GRASS_BLOCK", "DIRT", "STONE"]
+        chance: 0.1
+      - type: "FREEZE"
+        blocks: ["WATER"]
+        chance: 0.01
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.05
+        amplifier: 0
+        duration: 100
+
+  world_effects:
+    snow_accumulation: true
+    temperature_modifier: -0.2
+
+# Heavy Snow
+heavy_snow:
+  id: "heavy_snow"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.2
+    fog_density: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWFLAKE"
+        count: 20
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_SNOW_PLACE"
+        volume: 0.4
+        pitch: 0.9
+        interval: 40
+      - sound: "BLOCK_SNOW_STEP"
+        volume: 0.3
+        pitch: 1.0
+        interval: 80
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SNOW_LAYER"
+        blocks: ["GRASS_BLOCK", "DIRT", "STONE", "ICE"]
+        chance: 0.2
+      - type: "FREEZE"
+        blocks: ["WATER"]
+        chance: 0.05
+      - type: "COLLAPSE"
+        blocks: ["LEAVES"]
+        chance: 0.01
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.15
+        amplifier: 0
+        duration: 100
+      - type: "DAMAGE"
+        chance: 0.01
+        amount: 1.0
+        interval: 400
+        message: "effects.cold_damage"
+
+  world_effects:
+    snow_accumulation: true
+    deep_snow: true
+    temperature_modifier: -0.3
+    visibility_reduction: 0.5
+
+# Hail
+small_hail:
+  id: "small_hail"
+  has_precipitation: true
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.3
+    fog_density: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWBALL"
+        count: 8
+        spread: 20.0
+        height: 15.0
+        speed: 0.2
+      - type: "WATER_DROP"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.3
+        pitch: 1.5
+        interval: 20
+      - sound: "WEATHER_RAIN"
+        volume: 0.3
+        pitch: 1.0
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        blocks: ["CROPS", "FLOWERS"]
+        chance: 0.05
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    hail_damage_crops: true
+    entity_damage_chance: 0.0
+    duration_override: 20  # Shorter than normal rain
+
+# Medium Hail
+medium_hail:
+  id: "medium_hail"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.4
+    fog_density: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWBALL"
+        count: 15
+        spread: 20.0
+        height: 15.0
+        speed: 0.3
+      - type: "WATER_DROP"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.5
+        pitch: 1.3
+        interval: 15
+      - sound: "WEATHER_RAIN"
+        volume: 0.3
+        pitch: 1.0
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        blocks: ["CROPS", "FLOWERS", "LEAVES"]
+        chance: 0.1
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        chance: 0.05
+        amount: 0.5
+        interval: 200
+        message: "You are pelted by hailstones!"
+
+  world_effects:
+    hail_damage_crops: true
+    entity_damage_chance: 0.05
+    duration_override: 15  # Even shorter
+
+# Large Hail
+large_hail:
+  id: "large_hail"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.5
+    fog_density: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWBALL"
+        count: 25
+        spread: 20.0
+        height: 15.0
+        speed: 0.4
+      - type: "WATER_DROP"
+        count: 5
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.7
+        pitch: 1.1
+        interval: 10
+      - sound: "ENTITY_ARROW_HIT"
+        volume: 0.5
+        pitch: 1.0
+        interval: 15
+      - sound: "WEATHER_RAIN"
+        volume: 0.3
+        pitch: 1.0
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        blocks: ["CROPS", "FLOWERS", "LEAVES", "GLASS"]
+        chance: 0.2
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 1.0
+        interval: 100
+        message: "You are struck by large hailstones!"
+      - type: "SLOW"
+        chance: 0.2
+        amplifier: 0
+        duration: 60
+
+  world_effects:
+    hail_damage_crops: true
+    entity_damage_chance: 0.15
+    duration_override: 10  # Very short
+    warning_message: true

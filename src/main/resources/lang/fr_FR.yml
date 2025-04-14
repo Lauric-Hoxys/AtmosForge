@@ -1,0 +1,279 @@
+# ===================================
+# Fichier de langue français pour AtmosForge
+# ===================================
+
+# Messages généraux
+general:
+  prefix: "&b[AtmosForge] &r"
+  no_permission: "&cVous n'avez pas la permission d'utiliser cette commande."
+  world_not_enabled: "&cAtmosForge n'est pas activé pour ce monde."
+  reload_success: "&aAtmosForge a été rechargé avec succès."
+  command_error: "&cErreur dans la commande. Utilisez &f/atmosforge help &cpour obtenir de l'aide."
+
+# Messages de météo
+weather:
+  change: "&6La météo a changé : &f{weather}"
+  set_success: "&aMétéo définie sur &f{weather} &apour &f{duration} &aminutes."
+  set_error: "&cImpossible de définir la météo. Un événement a peut-être annulé le changement."
+
+  # Noms des types de météo
+  light_rain:
+    name: "&9Pluie légère"
+    description: "Une pluie légère et rafraîchissante."
+  moderate_rain:
+    name: "&9Pluie modérée"
+    description: "Une pluie régulière."
+  heavy_rain:
+    name: "&1Pluie forte"
+    description: "Une pluie intense et soutenue."
+  drizzle:
+    name: "&9Bruine"
+    description: "Une fine pluie, presque comme un brouillard humide."
+  shower:
+    name: "&9Averse"
+    description: "Une pluie brève mais intense."
+  freezing_rain:
+    name: "&bPluie verglaçante"
+    description: "Une pluie qui gèle au contact des surfaces."
+  small_hail:
+    name: "&bPetite grêle"
+    description: "De petits grêlons qui tombent du ciel."
+  medium_hail:
+    name: "&bGrêle moyenne"
+    description: "Des grêlons de taille moyenne."
+  large_hail:
+    name: "&bGrosse grêle"
+    description: "Des grêlons massifs et dangereux."
+  light_snow:
+    name: "&fNeige légère"
+    description: "De petits flocons de neige tombant doucement."
+  moderate_snow:
+    name: "&fNeige modérée"
+    description: "Une chute de neige régulière."
+  heavy_snow:
+    name: "&fNeige forte"
+    description: "Une tempête de neige intense."
+  sleet:
+    name: "&bNeige fondue"
+    description: "Un mélange de pluie et de neige."
+  blizzard:
+    name: "&fBlizzard"
+    description: "Une tempête de neige violente avec vents forts."
+  slush:
+    name: "&7Neige fondue"
+    description: "De la neige partiellement fondue."
+  frost:
+    name: "&bGivre"
+    description: "Une fine couche de glace qui se forme sur les surfaces."
+  mud_rain:
+    name: "&6Pluie de boue"
+    description: "De la pluie contenant des particules de boue ou de sable."
+  sand_rain:
+    name: "&6Pluie de sable"
+    description: "Un phénomène rare où du sable tombe avec la pluie."
+
+  # Phénomènes liés à la température
+  heat_wave:
+    name: "&cVague de chaleur"
+    description: "Une période de chaleur intense."
+  cold_wave:
+    name: "&bVague de froid"
+    description: "Une période de froid intense."
+  frost_event:
+    name: "&bGel"
+    description: "Un phénomène où l'eau gèle en surface."
+  thaw:
+    name: "&aDégel"
+    description: "La glace et la neige fondent progressivement."
+  heatstroke:
+    name: "&4Canicule"
+    description: "Une chaleur extrême et dangereuse."
+
+  # Vents
+  light_breeze:
+    name: "&aBrise légère"
+    description: "Un vent doux et agréable."
+  moderate_wind:
+    name: "&aVent modéré"
+    description: "Un vent notable mais non menaçant."
+  strong_wind:
+    name: "&6Vent fort"
+    description: "Un vent puissant capable de perturber les activités."
+  gust:
+    name: "&6Rafales"
+    description: "Des augmentations soudaines de la vitesse du vent."
+  storm:
+    name: "&cTempête"
+    description: "Une combinaison de vents violents et de précipitations."
+  hurricane:
+    name: "&4Ouragan"
+    description: "Une tempête tropicale extrêmement violente."
+  tornado:
+    name: "&4Tornade"
+    description: "Un tourbillon d'air violent et destructeur."
+  waterspout:
+    name: "&9Trombe marine"
+    description: "Une tornade qui se forme au-dessus de l'eau."
+  sand_storm:
+    name: "&6Tempête de sable"
+    description: "Un vent violent transportant de grandes quantités de sable."
+  dust_storm:
+    name: "&6Tempête de poussière"
+    description: "Un vent violent transportant de la poussière fine."
+  wind_blast:
+    name: "&6Bourrasque"
+    description: "Une rafale de vent soudaine et puissante."
+  chinook:
+    name: "&cChinook"
+    description: "Un vent chaud et sec qui descend le long d'une pente montagneuse."
+  monsoon:
+    name: "&9Mousson"
+    description: "Une saison de pluies abondantes accompagnées de vents."
+
+  # Phénomènes électriques et lumineux
+  thunderstorm:
+    name: "&5Orage"
+    description: "Une tempête avec tonnerre, éclairs et pluie."
+  lightning:
+    name: "&eÉclair"
+    description: "Des décharges électriques dans l'atmosphère."
+  thunder:
+    name: "&7Tonnerre"
+    description: "Le son produit par les éclairs, sans précipitations."
+  st_elmo_fire:
+    name: "&dFeu de Saint-Elme"
+    description: "Un phénomène lumineux qui apparaît parfois sur des objets pointus pendant un orage."
+  aurora:
+    name: "&dAurore polaire"
+    description: "Un spectacle lumineux naturel dans le ciel nocturne des régions polaires."
+
+  # Phénomènes de visibilité
+  fog:
+    name: "&7Brouillard"
+    description: "Une condensation d'eau en suspension dans l'air qui réduit la visibilité."
+  mist:
+    name: "&7Brume"
+    description: "Un brouillard léger."
+  smog:
+    name: "&8Smog"
+    description: "Un brouillard contenant des polluants."
+  sea_mist:
+    name: "&7Brume de mer"
+    description: "Une brume qui se forme au-dessus de l'océan."
+  freezing_fog:
+    name: "&bBrouillard givrant"
+    description: "Un brouillard qui gèle au contact des surfaces."
+  smoke:
+    name: "&8Fumée"
+    description: "Des particules de combustion en suspension dans l'air."
+  dust_haze:
+    name: "&6Brume de poussière"
+    description: "Une brume contenant des particules de poussière en suspension."
+  volcanic_ash:
+    name: "&8Cendres volcaniques"
+    description: "Des cendres éjectées par un volcan en éruption."
+
+  # Phénomènes optiques
+  rainbow:
+    name: "&dArc-en-ciel"
+    description: "Un arc multicolore formé par la réfraction de la lumière dans les gouttes d'eau."
+  moonbow:
+    name: "&fArc-en-ciel lunaire"
+    description: "Un arc-en-ciel formé par la lumière de la lune."
+  halo:
+    name: "&eHalo"
+    description: "Un anneau lumineux autour du soleil ou de la lune."
+  sundog:
+    name: "&eParhélie"
+    description: "Des taches lumineuses qui apparaissent de chaque côté du soleil."
+  light_pillar:
+    name: "&ePilier lumineux"
+    description: "Une colonne verticale de lumière qui semble s'élever du soleil ou de la lune."
+  corona:
+    name: "&eCouronne"
+    description: "Un cercle coloré autour du soleil ou de la lune."
+  crepuscular_ray:
+    name: "&eRayon crépusculaire"
+    description: "Des rayons de soleil qui traversent les nuages ou l'horizon."
+  green_flash:
+    name: "&aÉclair vert"
+    description: "Un phénomène optique rare où un flash vert apparaît au coucher du soleil."
+
+  # Conditions de ciel
+  clear_sky:
+    name: "&bCiel dégagé"
+    description: "Un ciel sans nuages avec une excellente visibilité."
+  partly_cloudy:
+    name: "&7Partiellement nuageux"
+    description: "Un ciel avec quelques nuages épars."
+  cloudy:
+    name: "&7Nuageux"
+    description: "Un ciel avec de nombreux nuages mais sans précipitations."
+  overcast:
+    name: "&8Couvert"
+    description: "Un ciel entièrement couvert de nuages."
+  threatening_sky:
+    name: "&8Ciel menaçant"
+    description: "Un ciel sombre qui annonce un orage imminent."
+
+  # Phénomènes extrêmes ou rares
+  tropical_cyclone:
+    name: "&4Cyclone tropical"
+    description: "Un système de tempête rotative massive avec des vents extrêmement violents."
+  firestorm:
+    name: "&cTempête de feu"
+    description: "Un incendie intense qui crée son propre système météorologique."
+  storm_surge:
+    name: "&9Onde de tempête"
+    description: "Une élévation anormale du niveau de la mer causée par une tempête."
+  avalanche:
+    name: "&fAvalanche"
+    description: "Une masse de neige, de glace et de roches qui dévale une pente montagneuse."
+  flash_flood:
+    name: "&9Inondation éclair"
+    description: "Une montée rapide et soudaine des eaux."
+  acid_rain:
+    name: "&aPluie acide"
+    description: "De la pluie contenant des polluants acides."
+  ice_fog:
+    name: "&bBrouillard glacé"
+    description: "Un brouillard composé de minuscules cristaux de glace en suspension."
+  colored_snow:
+    name: "&dNeige colorée"
+    description: "De la neige teintée par des algues, du pollen ou d'autres substances."
+
+  # Cycle nuit
+  night_cycle:
+    name: "&9Cycle de nuit"
+    description: "La période nocturne où les phénomènes météorologiques sont en pause."
+
+# Messages de saison
+seasons:
+  change: "&6La saison a changé : &f{season}"
+  set_success: "&aSaison définie sur &f{season}&a, jour &f{day}&a."
+  set_error: "&cImpossible de définir la saison. Un événement a peut-être annulé le changement."
+
+  # Noms des saisons
+  spring:
+    name: "&aPrintemps"
+    description: "Une saison de renouveau, avec des températures modérées et des pluies occasionnelles."
+  summer:
+    name: "&6Été"
+    description: "Une saison chaude avec de longues journées ensoleillées."
+  autumn:
+    name: "&eAutomne"
+    description: "Une saison fraîche où les feuilles changent de couleur et tombent."
+  winter:
+    name: "&bHiver"
+    description: "Une saison froide avec de courtes journées et parfois de la neige."
+
+# Messages d'effets
+effects:
+  heat_damage: "&cVous souffrez de la chaleur intense !"
+  cold_damage: "&bVous souffrez du froid glacial !"
+  wind_damage: "&eVous êtes emporté par les vents violents !"
+
+# Messages de temps
+time:
+  day: "&eC'est maintenant le jour dans &f{world}&e."
+  night: "&9C'est maintenant la nuit dans &f{world}&9."

@@ -1,0 +1,104 @@
+# ===================================
+# Autumn Season Configuration for AtmosForge
+# ===================================
+
+# Season information
+info:
+  id: "autumn"
+  display_name: "Autumn"
+  order: 2
+
+# Visual settings
+visuals:
+  sky_color: "94C4FF"
+  foliage_color: "CF7A2F"
+  grass_color: "BF9D37"
+  water_color: "4384E3"
+  fog_color: "D8E1FF"
+
+# Effect settings
+effects:
+  particle_intensity: 0.7
+  ambient_sounds: true
+  ambient_sound_volume: 0.5
+
+# Weather probabilities (must add up to 100)
+weather_chances:
+  moderate_rain: 15
+  heavy_rain: 10
+  drizzle: 8
+  light_snow: 5
+  frost: 7
+  moderate_wind: 12
+  strong_wind: 8
+  gust: 5
+  fog: 10
+  cloudy: 12
+  overcast: 8
+  threatening_sky: 5
+
+# World effects
+world_effects:
+  # Plant growth speed multiplier
+  growth_multiplier: 0.7
+
+  # Animal spawn rate multiplier
+  animal_spawn_multiplier: 0.8
+
+  # Flower decay rate
+  flower_decay: 0.6
+
+  # Leaf fall chance (visual effect)
+  leaf_fall_chance: 0.8
+
+  # Crops ripening bonus
+  crop_ripening_bonus: 1.3
+
+# Player effects
+player_effects:
+  # Walking speed modifier
+  speed_modifier: -0.03
+
+  # Hunger rate modifier
+  hunger_rate_modifier: 1.1
+
+  # Health regeneration modifier
+  regen_modifier: 0.95
+
+  # Special effects
+  chilly_morning_chance: 0.3  # Chance for minor slowness effect in the morning
+
+# Biome-specific settings
+biome_effects:
+  plains:
+    grass_color: "BF9D37"
+    flower_density: 0.4
+
+  forest:
+    foliage_color: "CF7A2F"
+    leaf_particle_chance: 0.7
+
+  taiga:
+    foliage_color: "967434"
+    early_snow_chance: 0.2
+
+  mountains:
+    snow_line_modifier: 0.7  # Snow line is lower in autumn
+
+  birch_forest:
+    foliage_color: "EAD83B"
+    leaf_particle_chance: 0.9
+
+# Transition settings
+transition:
+  # Days to transition into this season (visual effects fade in)
+  fade_in_days: 10
+
+  # Days to transition out of this season (visual effects fade out)
+  fade_out_days: 6
+
+  # Special transition effects
+  effects:
+    - "LEAF_COLOR_CHANGE"
+    - "FALLING_LEAVES"
+    - "FOGGY_MORNINGS"

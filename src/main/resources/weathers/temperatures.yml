@@ -1,0 +1,358 @@
+# ===================================
+# Temperature Phenomena Configuration for AtmosForge
+# ===================================
+
+# Common settings for all temperature phenomena
+common:
+  category: "TEMPERATURE"
+  default_duration: 120  # minutes (longer than other weather types)
+  visual_effects: true
+  sound_effects: false
+  particle_effects: true
+  player_effects: true
+  warning_message: true
+
+# Heat Wave
+heat_wave:
+  id: "heat_wave"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: -0.1  # Brighter
+    fog_density: 0.2
+    fog_color: "FFCC77"
+    sky_color_modifier: "FFAA55"
+
+  particles:
+    enabled: true
+    types:
+      - type: "SMOKE_NORMAL"
+        count: 5
+        spread: 30.0
+        height: 2.0
+        speed: 0.01
+        chance: 0.1
+      - type: "SPELL_MOB"
+        count: 10
+        spread: 10.0
+        height: 1.0
+        speed: 0.0
+        colors: ["FFAA00"]
+        opacity: 0.1
+
+  sounds:
+    enabled: false
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "DRY"
+        blocks: ["FARMLAND", "DIRT"]
+        chance: 0.01
+      - type: "WITHER"
+        blocks: ["CROPS", "FLOWERS"]
+        chance: 0.005
+      - type: "FIRE_START"
+        blocks: ["LEAVES", "GRASS_BLOCK"]
+        chance: 0.001
+        conditions: "PROLONGED_EXPOSURE"
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "HUNGER"
+        chance: 0.1
+        amplifier: 0
+        duration: 200
+      - type: "SLOW"
+        chance: 0.05
+        amplifier: 0
+        duration: 100
+        conditions: "EXPOSED_TO_SUN"
+
+  world_effects:
+    water_evaporation: true
+    mob_spawn_modifier: 0.8
+    crop_growth_modifier: 0.7
+    only_in_hot_biomes: false
+    temperature_modifier: 1.0
+    duration_multiplier: 2.0  # Heat waves last longer
+
+# Heatstroke
+heatstroke:
+  id: "heatstroke"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: -0.2  # Even brighter
+    fog_density: 0.3
+    fog_color: "FFAA55"
+    sky_color_modifier: "FF8833"
+
+  particles:
+    enabled: true
+    types:
+      - type: "SMOKE_NORMAL"
+        count: 10
+        spread: 30.0
+        height: 2.0
+        speed: 0.01
+        chance: 0.2
+      - type: "SPELL_MOB"
+        count: 20
+        spread: 15.0
+        height: 1.0
+        speed: 0.0
+        colors: ["FF5500"]
+        opacity: 0.2
+      - type: "LAVA"
+        count: 2
+        spread: 20.0
+        height: 0.5
+        speed: 0.0
+        chance: 0.01
+
+  sounds:
+    enabled: false
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "DRY"
+        blocks: ["FARMLAND", "DIRT", "GRASS_BLOCK"]
+        chance: 0.02
+      - type: "WITHER"
+        blocks: ["CROPS", "FLOWERS", "LEAVES"]
+        chance: 0.01
+      - type: "FIRE_START"
+        blocks: ["LEAVES", "GRASS_BLOCK", "WOOL"]
+        chance: 0.002
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "HUNGER"
+        chance: 0.2
+        amplifier: 1
+        duration: 300
+      - type: "SLOW"
+        chance: 0.1
+        amplifier: 1
+        duration: 200
+        conditions: "EXPOSED_TO_SUN"
+      - type: "WEAKNESS"
+        chance: 0.1
+        amplifier: 0
+        duration: 400
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 1.0
+        interval: 200
+        message: "effects.heat_damage"
+        conditions: "EXPOSED_TO_SUN"
+
+  world_effects:
+    water_evaporation: true
+    water_level_decrease: 1
+    mob_spawn_modifier: 0.6
+    crop_death_chance: 0.05
+    only_in_hot_biomes: true
+    temperature_modifier: 1.5
+    animals_seek_shade: true
+    duration_multiplier: 1.5
+    forest_fire_chance: 0.01
+
+# Cold Wave
+cold_wave:
+  id: "cold_wave"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.1
+    fog_density: 0.2
+    fog_color: "AACCFF"
+    sky_color_modifier: "BBDDFF"
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWFLAKE"
+        count: 3
+        spread: 20.0
+        height: 10.0
+        speed: 0.02
+        chance: 0.1
+      - type: "CLOUD"
+        count: 5
+        spread: 10.0
+        height: 1.0
+        speed: 0.0
+        opacity: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.1
+        pitch: 2.0
+        interval: 200
+        chance: 0.05
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "FREEZE"
+        blocks: ["WATER"]
+        chance: 0.01
+      - type: "FROST"
+        blocks: ["GRASS_BLOCK", "LEAVES"]
+        chance: 0.02
+      - type: "DAMAGE"
+        blocks: ["CROPS"]
+        chance: 0.01
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.1
+        amplifier: 0
+        duration: 200
+      - type: "DAMAGE"
+        chance: 0.05
+        amount: 1.0
+        interval: 300
+        message: "effects.cold_damage"
+        conditions: "EXPOSED_TO_SKY"
+
+  world_effects:
+    water_freezing: true
+    mob_spawn_modifier: 0.7
+    only_in_cold_biomes: false
+    temperature_modifier: -1.0
+    snow_formation_chance: 0.2
+    animals_seek_shelter: true
+
+# Frost
+frost:
+  id: "frost"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.1
+    fog_color: "FFFFFF"
+
+  particles:
+    enabled: true
+    types:
+      - type: "SNOWFLAKE"
+        count: 1
+        spread: 20.0
+        height: 1.0
+        speed: 0.0
+        chance: 0.1
+      - type: "SPELL_MOB"
+        count: 5
+        spread: 10.0
+        height: 0.5
+        speed: 0.0
+        colors: ["FFFFFF"]
+        opacity: 0.2
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.05
+        pitch: 2.0
+        interval: 300
+        chance: 0.03
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "FROST"
+        blocks: ["GRASS_BLOCK", "LEAVES", "CROPS"]
+        chance: 0.05
+      - type: "DAMAGE"
+        blocks: ["CROPS"]
+        chance: 0.01
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    morning_only: true
+    disappears_at_noon: true
+    temperature_modifier: -0.5
+    thin_ice_formation: true
+
+# Thaw
+thaw:
+  id: "thaw"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "DRIPPING_WATER"
+        count: 10
+        spread: 20.0
+        height: 5.0
+        speed: 0.1
+        target: "SNOW_BLOCKS"
+      - type: "WATER_SPLASH"
+        count: 5
+        spread: 15.0
+        height: 0.5
+        speed: 0.0
+        target: "ICE_BLOCKS"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_WATER_AMBIENT"
+        volume: 0.2
+        pitch: 1.2
+        interval: 100
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MELT"
+        blocks: ["SNOW", "ICE", "PACKED_ICE"]
+        chance: 0.05
+      - type: "GROW"
+        blocks: ["GRASS_BLOCK", "SAPLINGS"]
+        chance: 0.01
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.05
+        amplifier: 0
+        duration: 60
+        conditions: "ON_MELTING_ICE"
+
+  world_effects:
+    ice_cracking_sounds: true
+    snowman_damage: true
+    temperature_modifier: 0.5
+    water_level_increase: 0.5
+    follows_cold_wave: true

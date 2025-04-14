@@ -1,0 +1,622 @@
+# ===================================
+# Wind Phenomena Configuration for AtmosForge
+# ===================================
+
+# Common settings for all wind phenomena
+common:
+  category: "WIND"
+  default_duration: 45  # minutes
+  visual_effects: true
+  sound_effects: true
+  particle_effects: true
+  player_effects: false
+  world_effects: true
+  directional: true
+
+# Light Breeze
+light_breeze:
+  id: "light_breeze"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 2
+        spread: 20.0
+        height: 5.0
+        speed: 0.1
+        direction: "WIND_DIRECTION"
+        chance: 0.1
+      - type: "FALLING_DUST"
+        count: 3
+        spread: 15.0
+        height: 10.0
+        speed: 0.05
+        direction: "WIND_DIRECTION"
+        chance: 0.05
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_BAMBOO_BREAK"
+        volume: 0.1
+        pitch: 0.8
+        interval: 100
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SWAY"
+        blocks: ["LEAVES", "FLOWERS", "GRASS"]
+        chance: 0.3
+        direction: "WIND_DIRECTION"
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    gentle_leaves_movement: true
+    grass_sway: true
+    direction_changes: true
+    change_interval: 600  # 30 minutes
+
+# Moderate Wind
+moderate_wind:
+  id: "moderate_wind"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 5
+        spread: 25.0
+        height: 8.0
+        speed: 0.2
+        direction: "WIND_DIRECTION"
+      - type: "FALLING_DUST"
+        count: 8
+        spread: 20.0
+        height: 12.0
+        speed: 0.1
+        direction: "WIND_DIRECTION"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_BAMBOO_BREAK"
+        volume: 0.2
+        pitch: 0.7
+        interval: 80
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.1
+        pitch: 1.5
+        interval: 200
+        chance: 0.1
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SWAY"
+        blocks: ["LEAVES", "FLOWERS", "GRASS"]
+        chance: 0.5
+        direction: "WIND_DIRECTION"
+        strength: 1.5
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    cloud_movement_speed: 1.5
+    leaves_falling_chance: 0.01
+    grass_sway: true
+    direction_changes: true
+    change_interval: 1200  # 60 minutes
+
+# Strong Wind
+strong_wind:
+  id: "strong_wind"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.1
+    fog_density: 0.1
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 10
+        spread: 30.0
+        height: 10.0
+        speed: 0.4
+        direction: "WIND_DIRECTION"
+      - type: "FALLING_DUST"
+        count: 15
+        spread: 25.0
+        height: 15.0
+        speed: 0.2
+        direction: "WIND_DIRECTION"
+      - type: "SWEEP_ATTACK"
+        count: 2
+        spread: 10.0
+        height: 1.0
+        speed: 0.1
+        direction: "WIND_DIRECTION"
+        chance: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.3
+        pitch: 1.2
+        interval: 60
+      - sound: "BLOCK_WOOL_BREAK"
+        volume: 0.2
+        pitch: 0.8
+        interval: 40
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SWAY"
+        blocks: ["LEAVES", "FLOWERS", "GRASS"]
+        chance: 0.8
+        direction: "WIND_DIRECTION"
+        strength: 2.5
+      - type: "BREAK"
+        blocks: ["FLOWERS"]
+        chance: 0.01
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "PUSH"
+        chance: 0.1
+        strength: 0.3
+        direction: "WIND_DIRECTION"
+
+  world_effects:
+    cloud_movement_speed: 3.0
+    leaves_falling_chance: 0.05
+    loose_items_move: true
+    affects_projectiles: true
+    direction_consistent: true
+    fire_spread_modifier: 1.5
+
+# Gust
+gust:
+  id: "gust"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.1
+    fog_density: 0.0
+    duration_override: 15  # Very short
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 15
+        spread: 35.0
+        height: 15.0
+        speed: 0.6
+        direction: "WIND_DIRECTION"
+      - type: "SWEEP_ATTACK"
+        count: 5
+        spread: 15.0
+        height: 2.0
+        speed: 0.2
+        direction: "WIND_DIRECTION"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.4
+        pitch: 1.0
+        interval: 20
+      - sound: "ENTITY_ENDER_DRAGON_FLAP"
+        volume: 0.3
+        pitch: 1.5
+        interval: 10
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SWAY"
+        blocks: ["LEAVES", "FLOWERS", "GRASS"]
+        chance: 1.0
+        direction: "WIND_DIRECTION"
+        strength: 4.0
+      - type: "BREAK"
+        blocks: ["FLOWERS", "TALL_GRASS"]
+        chance: 0.05
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "PUSH"
+        chance: 0.3
+        strength: 0.7
+        direction: "WIND_DIRECTION"
+
+  world_effects:
+    sudden_gust: true
+    brief_duration: true
+    affects_flying: true
+    loose_items_fly: true
+    unpredictable_directions: true
+    occurs_during_other_weather: true
+
+# Storm
+storm:
+  id: "storm"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.5
+    fog_density: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 20
+        spread: 40.0
+        height: 20.0
+        speed: 0.7
+        direction: "WIND_DIRECTION"
+      - type: "WATER_DROP"
+        count: 15
+        spread: 25.0
+        height: 15.0
+        speed: 0.3
+        direction: "WIND_DIRECTION"
+      - type: "SWEEP_ATTACK"
+        count: 10
+        spread: 20.0
+        height: 3.0
+        speed: 0.3
+        direction: "WIND_DIRECTION"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.6
+        pitch: 0.8
+        interval: 20
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.5
+        pitch: 0.7
+        interval: 30
+      - sound: "ENTITY_LIGHTNING_BOLT_THUNDER"
+        volume: 0.4
+        pitch: 1.0
+        interval: 300
+        chance: 0.1
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SWAY"
+        blocks: ["LEAVES", "FLOWERS", "GRASS"]
+        chance: 1.0
+        direction: "WIND_DIRECTION"
+        strength: 5.0
+      - type: "BREAK"
+        blocks: ["FLOWERS", "TALL_GRASS", "CROPS"]
+        chance: 0.1
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "PUSH"
+        chance: 0.5
+        strength: 1.0
+        direction: "WIND_DIRECTION"
+      - type: "SLOW"
+        chance: 0.2
+        amplifier: 1
+        duration: 100
+
+  world_effects:
+    heavy_rain_included: true
+    lightning_chance: 0.05
+    loose_items_fly: true
+    tree_damage_chance: 0.02
+    high_waves_in_water: true
+    affects_flying: true
+    affects_projectiles: true
+    direction_consistent: true
+
+# Hurricane
+hurricane:
+  id: "hurricane"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.7
+    fog_density: 0.8
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 30
+        spread: 50.0
+        height: 30.0
+        speed: 1.0
+        direction: "WIND_DIRECTION"
+      - type: "WATER_DROP"
+        count: 25
+        spread: 35.0
+        height: 20.0
+        speed: 0.5
+        direction: "WIND_DIRECTION"
+      - type: "EXPLOSION_NORMAL"
+        count: 5
+        spread: 30.0
+        height: 5.0
+        speed: 0.4
+        chance: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 1.0
+        pitch: 0.6
+        interval: 10
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.8
+        pitch: 0.5
+        interval: 20
+      - sound: "ENTITY_ENDER_DRAGON_GROWL"
+        volume: 0.4
+        pitch: 0.7
+        interval: 200
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "BREAK"
+        blocks: ["FLOWERS", "TALL_GRASS", "CROPS", "LEAVES"]
+        chance: 0.2
+      - type: "DAMAGE"
+        blocks: ["GLASS"]
+        chance: 0.05
+      - type: "PUSH"
+        blocks: ["SAND", "GRAVEL"]
+        chance: 0.1
+        strength: 2.0
+        direction: "WIND_DIRECTION"
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "PUSH"
+        chance: 0.8
+        strength: 1.5
+        direction: "WIND_DIRECTION"
+      - type: "SLOW"
+        chance: 0.4
+        amplifier: 2
+        duration: 100
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 2.0
+        interval: 200
+        message: "effects.wind_damage"
+
+  world_effects:
+    extreme_wind: true
+    flying_impossible: true
+    extreme_rain: true
+    lightning_chance: 0.1
+    water_level_increase: 3
+    loose_items_fly: true
+    tree_damage_chance: 0.1
+    structural_damage: true
+    warning_message: true
+    duration_override: 120  # Longer than usual
+    only_near_ocean: true
+
+# Tornado
+tornado:
+  id: "tornado"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.5
+    fog_density: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 100
+        spread: 10.0
+        height: 100.0
+        speed: 0.8
+        pattern: "TORNADO"
+        funnel_radius: 5.0
+        funnel_height: 80.0
+      - type: "EXPLOSION_NORMAL"
+        count: 10
+        spread: 10.0
+        height: 20.0
+        speed: 0.5
+        pattern: "TORNADO_BASE"
+      - type: "FALLING_DUST"
+        count: 30
+        spread: 15.0
+        height: 30.0
+        speed: 0.4
+        pattern: "TORNADO_PERIPHERY"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "ENTITY_ENDER_DRAGON_GROWL"
+        volume: 0.7
+        pitch: 0.4
+        interval: 40
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 1.0
+        pitch: 0.3
+        interval: 20
+      - sound: "ENTITY_GENERIC_EXPLODE"
+        volume: 0.3
+        pitch: 0.8
+        interval: 100
+        chance: 0.1
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "BREAK"
+        blocks: ["FLOWERS", "TALL_GRASS", "CROPS", "LEAVES", "GLASS"]
+        chance: 0.3
+      - type: "LIFT"
+        blocks: ["SAND", "GRAVEL", "DIRT"]
+        chance: 0.2
+      - type: "THROW"
+        blocks: ["LOOSE_OBJECTS"]
+        chance: 0.4
+        strength: 3.0
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "PUSH"
+        chance: 1.0
+        strength: 2.0
+        direction: "TORNADO_VORTEX"
+      - type: "LIFT"
+        chance: 0.5
+        strength: 1.0
+        height: 10.0
+      - type: "DAMAGE"
+        chance: 0.2
+        amount: 4.0
+        interval: 100
+        message: "You are caught in the tornado's violent winds!"
+
+  world_effects:
+    tornado_funnel: true
+    moves_randomly: true
+    speed: 0.1
+    flying_impossible: true
+    entity_vacuum: true
+    loose_items_fly: true
+    tree_uprooting: true
+    structural_damage: true
+    warning_message: true
+    duration_override: 30  # Short but intense
+    rare_event: true
+
+# Sandstorm
+sand_storm:
+  id: "sand_storm"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.3
+    fog_density: 0.7
+    fog_color: "D7B882"
+    render_distance_multiplier: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "FALLING_DUST"
+        count: 40
+        spread: 30.0
+        height: 15.0
+        speed: 0.6
+        direction: "WIND_DIRECTION"
+        colors: ["D7B882"]
+      - type: "SMOKE_NORMAL"
+        count: 10
+        spread: 25.0
+        height: 10.0
+        speed: 0.4
+        direction: "WIND_DIRECTION"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_SAND_BREAK"
+        volume: 0.5
+        pitch: 0.7
+        interval: 20
+      - sound: "ENTITY_PHANTOM_AMBIENT"
+        volume: 0.6
+        pitch: 0.8
+        interval: 60
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "SPREAD"
+        blocks: ["SAND"]
+        chance: 0.05
+        direction: "WIND_DIRECTION"
+      - type: "ACCUMULATE"
+        blocks: ["SAND"]
+        chance: 0.02
+        height: 1
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "BLINDNESS"
+        chance: 0.2
+        amplifier: 0
+        duration: 100
+      - type: "SLOW"
+        chance: 0.3
+        amplifier: 1
+        duration: 60
+      - type: "DAMAGE"
+        chance: 0.05
+        amount: 1.0
+        interval: 200
+        message: "You are battered by sand and debris!"
+
+  world_effects:
+    reduced_visibility: true
+    flying_difficult: true
+    only_in_desert: true
+    direction_consistent: true
+    sand_dune_formation: true
+    duration_override: 60

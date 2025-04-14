@@ -1,8 +1,50 @@
 name: AtmosForge
-version: '1.0-SNAPSHOT'
-main: fr.hoxys.plugin.atmosForge.Main
-api-version: '1.21'
-prefix: [ EnhancedSurvival ]
-load: STARTUP
-authors: [ Hoxys ]
-description: Plugin for TalionFuz
+version: 1.0.0
+main: fr.hoxys.plugin.atmosforge.Main
+description: Un système avancé de météo et de saisons pour Minecraft avec des conditions météorologiques personnalisées.
+author: Hoxys
+website: https://github.com/Lauric-Hoxys/AtmosForge
+api-version: 1.21.5
+softdepend: [PlaceholderAPI, ProtocolLib]
+
+commands:
+  atmosforge:
+    description: Commande principale du plugin AtmosForge
+    aliases: [af, atmos]
+    usage: /atmosforge help
+    permission: atmosforge.use
+
+permissions:
+  atmosforge.use:
+    description: Permet d'utiliser la commande de base AtmosForge
+    default: true
+
+  atmosforge.admin.reload:
+    description: Permet de recharger la configuration du plugin
+    default: op
+
+  atmosforge.admin.weather:
+    description: Permet de changer la météo
+    default: op
+
+  atmosforge.admin.season:
+    description: Permet de changer la saison
+    default: op
+
+  atmosforge.admin.time:
+    description: Permet de forcer le jour ou la nuit
+    default: op
+
+  atmosforge.admin.config:
+    description: Permet de modifier la configuration en jeu
+    default: op
+
+  atmosforge.admin.*:
+    description: Donne accès à toutes les commandes administratives
+    default: op
+    children:
+      atmosforge.admin.reload: true
+      atmosforge.admin.weather: true
+      atmosforge.admin.season: true
+      atmosforge.admin.time: true
+      atmosforge.admin.config: true

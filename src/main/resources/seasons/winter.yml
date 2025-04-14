@@ -1,0 +1,108 @@
+# ===================================
+# Winter Season Configuration for AtmosForge
+# ===================================
+
+# Season information
+info:
+  id: "winter"
+  display_name: "Winter"
+  order: 3
+
+# Visual settings
+visuals:
+  sky_color: "AECEFF"
+  foliage_color: "5B7B64"
+  grass_color: "8AB870"
+  water_color: "3A6FE3"
+  fog_color: "E4EBFF"
+
+# Effect settings
+effects:
+  particle_intensity: 0.9
+  ambient_sounds: true
+  ambient_sound_volume: 0.3
+
+# Weather probabilities (must add up to 100)
+weather_chances:
+  light_snow: 18
+  moderate_snow: 15
+  heavy_snow: 10
+  blizzard: 7
+  sleet: 5
+  freezing_rain: 5
+  frost: 10
+  cold_wave: 5
+  freezing_fog: 8
+  strong_wind: 7
+  overcast: 6
+  clear_sky: 4
+
+# World effects
+world_effects:
+  # Plant growth speed multiplier
+  growth_multiplier: 0.2
+
+  # Animal spawn rate multiplier
+  animal_spawn_multiplier: 0.5
+
+  # Snow accumulation rate
+  snow_accumulation: 0.8
+
+  # Water freezing chance
+  water_freeze_chance: 0.7
+
+  # Icicle formation chance
+  icicle_chance: 0.6
+
+# Player effects
+player_effects:
+  # Walking speed modifier
+  speed_modifier: -0.05
+
+  # Hunger rate modifier
+  hunger_rate_modifier: 1.4
+
+  # Health regeneration modifier
+  regen_modifier: 0.85
+
+  # Special effects
+  frostbite_chance: 0.3  # Chance to get slowness effect in extreme cold
+
+  # Ice walking effect (reduced slipperiness)
+  ice_traction_modifier: 0.2
+
+# Biome-specific settings
+biome_effects:
+  plains:
+    grass_color: "8AB870"
+    snow_cover_chance: 0.8
+
+  forest:
+    foliage_color: "5B7B64"
+    snow_on_trees_chance: 0.7
+
+  taiga:
+    snow_depth_modifier: 1.5
+    ice_formation_chance: 0.8
+
+  mountains:
+    snow_line_modifier: 0.3  # Snow line is much lower in winter
+    avalanche_chance: 0.05
+
+  desert:
+    temperature_modifier: 0.5
+    rare_snow_chance: 0.01
+
+# Transition settings
+transition:
+  # Days to transition into this season (visual effects fade in)
+  fade_in_days: 8
+
+  # Days to transition out of this season (visual effects fade out)
+  fade_out_days: 12
+
+  # Special transition effects
+  effects:
+    - "FROST_FORMATION"
+    - "WATER_FREEZING"
+    - "BREATH_MIST"

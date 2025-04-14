@@ -1,0 +1,251 @@
+# ===================================
+# Electrical Weather Configuration for AtmosForge
+# ===================================
+
+# Common settings for all electrical phenomena
+common:
+  category: "ELECTRICAL"
+  default_duration: 60  # minutes
+  visual_effects: true
+  sound_effects: true
+  particle_effects: true
+  player_effects: true
+
+# Thunderstorm
+thunderstorm:
+  id: "thunderstorm"
+  has_precipitation: true
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: true
+    darkening_factor: 0.6
+    fog_density: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "WATER_DROP"
+        count: 15
+        spread: 20.0
+        height: 15.0
+        speed: 0.1
+      - type: "FIREWORK"
+        count: 1
+        spread: 40.0
+        height: 80.0
+        speed: 0.0
+        chance: 0.01
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "WEATHER_RAIN"
+        volume: 0.6
+        pitch: 1.0
+        interval: 40
+      - sound: "ENTITY_LIGHTNING_BOLT_THUNDER"
+        volume: 1.0
+        pitch: 1.0
+        interval: 100
+        chance: 0.3
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "MOISTURIZE"
+        blocks: ["DIRT", "GRASS_BLOCK", "FARMLAND"]
+        chance: 0.3
+      - type: "LIGHTNING_STRIKE"
+        chance: 0.01
+        target_entities: true
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.05
+        amplifier: 0
+        duration: 100
+      - type: "GLOWING"
+        chance: 0.01
+        amplifier: 0
+        duration: 60
+        when_thunder: true
+
+  world_effects:
+    mob_spawn_modifier: 0.7
+    creeper_charge_chance: 0.5
+    lightning_frequency: 3
+
+# Lightning (without rain)
+lightning:
+  id: "lightning"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.3
+    fog_density: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "FIREWORK"
+        count: 1
+        spread: 40.0
+        height: 80.0
+        speed: 0.0
+        chance: 0.03
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "ENTITY_LIGHTNING_BOLT_THUNDER"
+        volume: 1.0
+        pitch: 1.0
+        interval: 80
+        chance: 0.4
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "LIGHTNING_STRIKE"
+        chance: 0.02
+        target_entities: true
+      - type: "FIRE_START"
+        blocks: ["GRASS_BLOCK", "LEAVES"]
+        chance: 0.005
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "GLOWING"
+        chance: 0.02
+        amplifier: 0
+        duration: 60
+        when_thunder: true
+
+  world_effects:
+    creeper_charge_chance: 0.8
+    lightning_frequency: 5
+
+# Thunder (sound only)
+thunder:
+  id: "thunder"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.2
+    fog_density: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "ENTITY_LIGHTNING_BOLT_THUNDER"
+        volume: 0.7
+        pitch: 1.0
+        interval: 200
+        chance: 0.3
+        distance_modifier: 1.5
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    mob_spawn_modifier: 0.9
+
+# St. Elmo's Fire
+st_elmo_fire:
+  id: "st_elmo_fire"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "SOUL_FIRE_FLAME"
+        count: 5
+        spread: 1.0
+        height: 4.0
+        speed: 0.01
+        target: "TALLEST_BLOCKS"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_FIRE_AMBIENT"
+        volume: 0.3
+        pitch: 1.5
+        interval: 40
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "GLOWING"
+        chance: 0.1
+        amplifier: 0
+        duration: 100
+        height_dependent: true
+
+  world_effects:
+    only_at_high_altitude: true
+    aurora_chance: 0.2
+
+# Aurora
+aurora:
+  id: "aurora"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: -0.2  # Makes it brighter
+    fog_density: 0.0
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 200
+        spread: 100.0
+        height: 100.0
+        speed: 0.01
+        colors: ["00FF88", "4444FF", "8800FF"]
+        pattern: "WAVE"
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_AMETHYST_BLOCK_CHIME"
+        volume: 0.2
+        pitch: 0.5
+        interval: 60
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "NIGHT_VISION"
+        chance: 0.5
+        amplifier: 0
+        duration: 200
+        conditions: "LOOK_UP"
+
+  world_effects:
+    only_at_night: true
+    only_in_cold_biomes: true
+    time_speed_modifier: 0.5  # Time passes slower

@@ -1,0 +1,84 @@
+# ===================================
+# Configuration principale d'AtmosForge
+# ===================================
+
+# Version de la configuration
+config-version: 1
+
+# Langue du plugin (fr_FR, en_US, etc.)
+language: "fr_FR"
+
+# Mondes activés pour AtmosForge
+# Utiliser 'all' pour activer tous les mondes, ou spécifier les noms de mondes
+enabled_worlds:
+  - "all"
+  # Exemples:
+  # - "world"
+  # - "world_nether"
+  # - "world_the_end"
+
+# Configuration des saisons
+seasons:
+  # Nombre de jours Minecraft dans chaque saison
+  days_per_season: 30
+
+  # Transitions entre saisons (true = transition progressive, false = transition instantanée)
+  smooth_transitions: true
+
+  # Effets visuels de saison
+  visual_effects: true
+
+  # Effets sur les joueurs
+  player_effects: true
+
+# Configuration de la météo
+weather:
+  # Durée par défaut d'une condition météo en minutes
+  default_duration: 120
+
+  # Chance de changement météorologique par jour (0-100)
+  change_chance: 30
+
+  # Effets visuels météorologiques
+  visual_effects: true
+
+  # Effets sonores météorologiques
+  sound_effects: true
+
+  # Effets sur les joueurs
+  player_effects: true
+
+  # Effets sur les blocs
+  block_effects: true
+
+# Configuration du cycle jour/nuit
+time:
+  # Intervalle de vérification du temps en ticks
+  check_interval: 200
+
+  # Active le cycle de nuit (désactive la météo la nuit)
+  night_cycle: true
+
+# Configuration des effets
+effects:
+  # Intervalles de dégâts en ticks
+  damage_intervals:
+    # Dégâts de gelure (par temps froid extrême)
+    frostbite: 100
+
+    # Dégâts de chaleur extrême
+    soldering_iron: 80
+
+  # Intensité des particules (1-10)
+  particle_intensity: 5
+
+  # Volume des sons (0.0-1.0)
+  sound_volume: 0.5
+
+# Débug et performances
+debug:
+  # Active le mode de débug (plus de logs)
+  enabled: false
+
+  # Limite de particules par joueur
+  max_particles_per_player: 500

@@ -1,0 +1,528 @@
+# ===================================
+# Visibility Phenomena Configuration for AtmosForge
+# ===================================
+
+# Common settings for all visibility phenomena
+common:
+  category: "VISIBILITY"
+  default_duration: 90  # minutes
+  visual_effects: true
+  sound_effects: false
+  particle_effects: true
+  player_effects: false
+  reduced_visibility: true
+
+# Fog
+fog:
+  id: "fog"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.1
+    fog_density: 0.8
+    fog_color: "DDDDDD"
+    render_distance_multiplier: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 10
+        spread: 20.0
+        height: 2.0
+        speed: 0.01
+        fixed_position: true
+        follow_player: true
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_WOOL_BREAK"
+        volume: 0.05
+        pitch: 0.7
+        interval: 200
+        ambient: true
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    reduced_visibility: true
+    mob_spawn_modifier: 0.7
+    navigation_difficulty: true
+    morning_evening_prone: true
+
+# Mist
+mist:
+  id: "mist"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.5
+    fog_color: "EEEEEE"
+    render_distance_multiplier: 0.5
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 5
+        spread: 20.0
+        height: 1.0
+        speed: 0.01
+        fixed_position: true
+        follow_player: true
+
+  sounds:
+    enabled: false
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    reduced_visibility: true
+    near_water_more_likely: true
+    morning_only: true
+    dissipates_at_noon: true
+    height_dependent: true
+    lower_areas_thicker: true
+
+# Freezing Fog
+freezing_fog:
+  id: "freezing_fog"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.1
+    fog_density: 0.8
+    fog_color: "EEEEFF"
+    render_distance_multiplier: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 10
+        spread: 20.0
+        height: 2.0
+        speed: 0.005
+        fixed_position: true
+        follow_player: true
+      - type: "SNOWFLAKE"
+        count: 3
+        spread: 15.0
+        height: 1.5
+        speed: 0.01
+        chance: 0.2
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.05
+        pitch: 1.8
+        interval: 300
+        chance: 0.05
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "FROST"
+        blocks: ["LEAVES", "GRASS", "FLOWERS"]
+        chance: 0.02
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.1
+        amplifier: 1
+        duration: 100
+      - type: "DAMAGE"
+        chance: 0.01
+        amount: 1.0
+        interval: 400
+        message: "effects.cold_damage"
+
+  world_effects:
+    reduced_visibility: true
+    ice_formation_on_surfaces: true
+    temperature_modifier: -0.8
+    only_in_cold_biomes: true
+    slippery_surfaces: true
+
+# Ice Fog
+ice_fog:
+  id: "ice_fog"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.0
+    fog_density: 0.9
+    fog_color: "EEFFFF"
+    render_distance_multiplier: 0.1
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 15
+        spread: 20.0
+        height: 2.0
+        speed: 0.002
+        fixed_position: true
+        follow_player: true
+      - type: "SNOWFLAKE"
+        count: 5
+        spread: 15.0
+        height: 1.5
+        speed: 0.01
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_GLASS_BREAK"
+        volume: 0.1
+        pitch: 1.5
+        interval: 200
+        chance: 0.1
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "FREEZE"
+        blocks: ["WATER"]
+        chance: 0.05
+      - type: "FROST"
+        blocks: ["ALL"]
+        chance: 0.05
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "SLOW"
+        chance: 0.2
+        amplifier: 2
+        duration: 100
+      - type: "DAMAGE"
+        chance: 0.05
+        amount: 1.0
+        interval: 200
+        message: "effects.cold_damage"
+
+  world_effects:
+    reduced_visibility: true
+    extreme_ice_formation: true
+    temperature_modifier: -1.2
+    only_in_cold_biomes: true
+    only_at_night: true
+    duration_override: 60  # Shorter duration
+
+# Smog
+smog:
+  id: "smog"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.3
+    fog_density: 0.7
+    fog_color: "998877"
+    render_distance_multiplier: 0.3
+
+  particles:
+    enabled: true
+    types:
+      - type: "SMOKE_LARGE"
+        count: 10
+        spread: 25.0
+        height: 5.0
+        speed: 0.01
+      - type: "TOWN_AURA"
+        count: 15
+        spread: 20.0
+        height: 3.0
+        speed: 0.01
+
+  sounds:
+    enabled: false
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "BLINDNESS"
+        chance: 0.05
+        amplifier: 0
+        duration: 60
+      - type: "CONFUSION"
+        chance: 0.03
+        amplifier: 0
+        duration: 100
+      - type: "POISON"
+        chance: 0.01
+        amplifier: 0
+        duration: 60
+        conditions: "PROLONGED_EXPOSURE"
+
+  world_effects:
+    reduced_visibility: true
+    only_near_industry: true
+    near_lava_likely: true
+    duration_multiplier: 1.5
+    night_more_likely: true
+
+# Smoke
+smoke:
+  id: "smoke"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.5
+    fog_density: 0.8
+    fog_color: "555555"
+    render_distance_multiplier: 0.2
+
+  particles:
+    enabled: true
+    types:
+      - type: "SMOKE_LARGE"
+        count: 20
+        spread: 30.0
+        height: 10.0
+        speed: 0.05
+      - type: "CAMPFIRE_SIGNAL_SMOKE"
+        count: 10
+        spread: 50.0
+        height: 30.0
+        speed: 0.1
+        vertical_only: true
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_FIRE_AMBIENT"
+        volume: 0.2
+        pitch: 0.8
+        interval: 60
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "BLINDNESS"
+        chance: 0.15
+        amplifier: 0
+        duration: 100
+      - type: "WITHER"
+        chance: 0.05
+        amplifier: 0
+        duration: 60
+        conditions: "PROLONGED_EXPOSURE"
+
+  world_effects:
+    reduced_visibility: true
+    fire_nearby: true
+    temporary_phenomenon: true
+    duration_override: 40
+    animals_flee: true
+
+# Dust Haze
+dust_haze:
+  id: "dust_haze"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.2
+    fog_density: 0.6
+    fog_color: "DDBB88"
+    render_distance_multiplier: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "DUST"
+        count: 15
+        spread: 25.0
+        height: 5.0
+        speed: 0.02
+        colors: ["CCAA77"]
+      - type: "TOWN_AURA"
+        count: 5
+        spread: 20.0
+        height: 3.0
+        speed: 0.01
+
+  sounds:
+    enabled: false
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "BLINDNESS"
+        chance: 0.03
+        amplifier: 0
+        duration: 40
+
+  world_effects:
+    reduced_visibility: true
+    only_in_dry_biomes: true
+    after_sandstorm_likely: true
+    duration_multiplier: 1.2
+
+# Sea Mist
+sea_mist:
+  id: "sea_mist"
+  has_precipitation: false
+  is_dangerous: false
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.1
+    fog_density: 0.6
+    fog_color: "CCDDEE"
+    render_distance_multiplier: 0.4
+
+  particles:
+    enabled: true
+    types:
+      - type: "CLOUD"
+        count: 8
+        spread: 20.0
+        height: 1.5
+        speed: 0.01
+      - type: "WATER_BUBBLE"
+        count: 3
+        spread: 10.0
+        height: 0.5
+        speed: 0.02
+        chance: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "AMBIENT_UNDERWATER_LOOP"
+        volume: 0.05
+        pitch: 1.2
+        interval: 100
+
+  block_effects:
+    enabled: false
+
+  player_effects:
+    enabled: false
+
+  world_effects:
+    reduced_visibility: true
+    only_near_ocean: true
+    morning_more_likely: true
+    duration_multiplier: 0.8
+    water_effects_enhanced: true
+
+# Volcanic Ash
+volcanic_ash:
+  id: "volcanic_ash"
+  has_precipitation: false
+  is_dangerous: true
+
+  visuals:
+    enable_vanilla_weather: false
+    darkening_factor: 0.7
+    fog_density: 0.9
+    fog_color: "555555"
+    render_distance_multiplier: 0.1
+
+  particles:
+    enabled: true
+    types:
+      - type: "ASH"
+        count: 25
+        spread: 30.0
+        height: 10.0
+        speed: 0.05
+      - type: "LAVA"
+        count: 2
+        spread: 40.0
+        height: 60.0
+        speed: 0.2
+        chance: 0.01
+      - type: "SMOKE_LARGE"
+        count: 15
+        spread: 50.0
+        height: 70.0
+        speed: 0.1
+
+  sounds:
+    enabled: true
+    types:
+      - sound: "BLOCK_BASALT_BREAK"
+        volume: 0.3
+        pitch: 0.7
+        interval: 40
+      - sound: "AMBIENT_CAVE"
+        volume: 0.2
+        pitch: 0.6
+        interval: 60
+
+  block_effects:
+    enabled: true
+    types:
+      - type: "ASH_LAYER"
+        blocks: ["GRASS_BLOCK", "STONE", "LEAVES"]
+        chance: 0.1
+      - type: "DAMAGE"
+        blocks: ["CROPS", "FLOWERS", "LEAVES"]
+        chance: 0.05
+
+  player_effects:
+    enabled: true
+    types:
+      - type: "BLINDNESS"
+        chance: 0.2
+        amplifier: 0
+        duration: 100
+      - type: "SLOW"
+        chance: 0.2
+        amplifier: 1
+        duration: 200
+      - type: "DAMAGE"
+        chance: 0.1
+        amount: 1.0
+        interval: 100
+        message: "You choke on the volcanic ash!"
+
+  world_effects:
+    reduced_visibility: true
+    extreme_darkness: true
+    near_volcanoes_only: true
+    rare_event: true
+    animals_flee: true
+    crop_death_chance: 0.1
+    duration_override: 180  # Longer than usual

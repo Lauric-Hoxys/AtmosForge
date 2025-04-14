@@ -1,0 +1,110 @@
+# ===================================
+# Summer Season Configuration for AtmosForge
+# ===================================
+
+# Season information
+info:
+  id: "summer"
+  display_name: "Summer"
+  order: 1
+
+# Visual settings
+visuals:
+  sky_color: "77ADFF"
+  foliage_color: "59C93C"
+  grass_color: "5DC417"
+  water_color: "3F76E4"
+  fog_color: "B3CDFF"
+
+# Effect settings
+effects:
+  particle_intensity: 0.8
+  ambient_sounds: true
+  ambient_sound_volume: 0.6
+
+# Weather probabilities (must add up to 100)
+weather_chances:
+  clear_sky: 25
+  partly_cloudy: 15
+  heat_wave: 8
+  heatstroke: 4
+  thunderstorm: 12
+  lightning: 6
+  heavy_rain: 8
+  shower: 10
+  light_breeze: 5
+  moderate_wind: 3
+  rainbow: 4
+
+# World effects
+world_effects:
+  # Plant growth speed multiplier
+  growth_multiplier: 1.8
+
+  # Animal spawn rate multiplier
+  animal_spawn_multiplier: 1.4
+
+  # Flower generation rate
+  flower_generation: 0.9
+
+  # Butterfly spawn chance
+  butterfly_chance: 0.8
+
+  # Desert effects
+  desert_heat_wave_chance: 0.6
+
+  # Forest fire chance (during thunderstorms or heat waves)
+  forest_fire_chance: 0.15
+
+# Player effects
+player_effects:
+  # Walking speed modifier
+  speed_modifier: 0.05
+
+  # Hunger rate modifier
+  hunger_rate_modifier: 1.2
+
+  # Health regeneration modifier
+  regen_modifier: 1.0
+
+  # Special effects
+  heat_exhaustion_chance: 0.25  # Chance to get weakness effect during heat waves
+
+  # Swimming boost
+  swim_speed_modifier: 0.1
+
+# Biome-specific settings
+biome_effects:
+  plains:
+    grass_color: "9BC414"
+    flower_density: 1.8
+
+  forest:
+    foliage_color: "59C93C"
+    leaf_particle_chance: 0.1
+
+  swamp:
+    water_color: "617B64"
+    fog_density: 0.9
+
+  desert:
+    temperature_modifier: 1.5
+    mirage_chance: 0.4
+
+  beach:
+    sand_color: "F2DA75"
+    water_clarity: 0.9
+
+# Transition settings
+transition:
+  # Days to transition into this season (visual effects fade in)
+  fade_in_days: 7
+
+  # Days to transition out of this season (visual effects fade out)
+  fade_out_days: 7
+
+  # Special transition effects
+  effects:
+    - "FULL_LEAF_GROWTH"
+    - "FIREFLY_APPEARANCE"
+    - "CICADA_SOUNDS"

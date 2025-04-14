@@ -1,0 +1,100 @@
+# ===================================
+# Spring Season Configuration for AtmosForge
+# ===================================
+
+# Season information
+info:
+  id: "spring"
+  display_name: "Spring"
+  order: 0
+
+# Visual settings
+visuals:
+  sky_color: "91BDFF"
+  foliage_color: "7FBC65"
+  grass_color: "7EC850"
+  water_color: "3F76E4"
+  fog_color: "C0D8FF"
+
+# Effect settings
+effects:
+  particle_intensity: 0.6
+  ambient_sounds: true
+  ambient_sound_volume: 0.4
+
+# Weather probabilities (must add up to 100)
+weather_chances:
+  light_rain: 15
+  moderate_rain: 10
+  drizzle: 8
+  shower: 5
+  light_breeze: 12
+  moderate_wind: 8
+  rainbow: 4
+  clear_sky: 15
+  partly_cloudy: 10
+  cloudy: 8
+  fog: 3
+  mist: 2
+  thunderstorm: 6
+  light_breeze: 12
+  moderate_wind: 8
+
+# World effects
+world_effects:
+  # Plant growth speed multiplier
+  growth_multiplier: 1.5
+
+  # Animal spawn rate multiplier
+  animal_spawn_multiplier: 1.2
+
+  # Flower generation rate
+  flower_generation: 0.7
+
+  # Butterfly spawn chance
+  butterfly_chance: 0.6
+
+# Player effects
+player_effects:
+  # Walking speed modifier
+  speed_modifier: 0.0
+
+  # Hunger rate modifier
+  hunger_rate_modifier: 0.9
+
+  # Health regeneration modifier
+  regen_modifier: 1.1
+
+  # Special effects
+  pollen_allergy_chance: 0.15  # Chance to get slowness effect occasionally
+
+# Biome-specific settings
+biome_effects:
+  plains:
+    grass_color: "7BF71A"
+    flower_density: 1.6
+
+  forest:
+    foliage_color: "59C93C"
+    leaf_particle_chance: 0.2
+
+  swamp:
+    water_color: "617B64"
+    fog_density: 0.7
+
+  mountains:
+    snow_line_modifier: 0.8  # Snow line is higher in spring
+
+# Transition settings
+transition:
+  # Days to transition into this season (visual effects fade in)
+  fade_in_days: 5
+
+  # Days to transition out of this season (visual effects fade out)
+  fade_out_days: 5
+
+  # Special transition effects
+  effects:
+    - "GROWING_LEAVES"
+    - "FLOWER_BLOOM"
+    - "BIRDSONG_INCREASE"

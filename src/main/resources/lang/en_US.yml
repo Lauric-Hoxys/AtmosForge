@@ -1,0 +1,279 @@
+# ===================================
+# English language file for AtmosForge
+# ===================================
+
+# General messages
+general:
+  prefix: "&b[AtmosForge] &r"
+  no_permission: "&cYou don't have permission to use this command."
+  world_not_enabled: "&cAtmosForge is not enabled for this world."
+  reload_success: "&aAtmosForge has been successfully reloaded."
+  command_error: "&cCommand error. Use &f/atmosforge help &cfor help."
+
+# Weather messages
+weather:
+  change: "&6The weather has changed: &f{weather}"
+  set_success: "&aWeather set to &f{weather} &afor &f{duration} &aminutes."
+  set_error: "&cUnable to set weather. An event may have canceled the change."
+
+  # Weather type names
+  light_rain:
+    name: "&9Light Rain"
+    description: "A light, refreshing rain."
+  moderate_rain:
+    name: "&9Moderate Rain"
+    description: "A steady rain."
+  heavy_rain:
+    name: "&1Heavy Rain"
+    description: "An intense, sustained rain."
+  drizzle:
+    name: "&9Drizzle"
+    description: "A fine, light rain, almost like wet fog."
+  shower:
+    name: "&9Shower"
+    description: "A brief but intense rain."
+  freezing_rain:
+    name: "&bFreezing Rain"
+    description: "Rain that freezes on contact with surfaces."
+  small_hail:
+    name: "&bSmall Hail"
+    description: "Small hailstones falling from the sky."
+  medium_hail:
+    name: "&bMedium Hail"
+    description: "Medium-sized hailstones."
+  large_hail:
+    name: "&bLarge Hail"
+    description: "Massive and dangerous hailstones."
+  light_snow:
+    name: "&fLight Snow"
+    description: "Small snowflakes falling gently."
+  moderate_snow:
+    name: "&fModerate Snow"
+    description: "A steady snowfall."
+  heavy_snow:
+    name: "&fHeavy Snow"
+    description: "An intense snow storm."
+  sleet:
+    name: "&bSleet"
+    description: "A mix of rain and snow."
+  blizzard:
+    name: "&fBlizzard"
+    description: "A violent snowstorm with strong winds."
+  slush:
+    name: "&7Slush"
+    description: "Partially melted snow."
+  frost:
+    name: "&bFrost"
+    description: "A thin layer of ice that forms on surfaces."
+  mud_rain:
+    name: "&6Mud Rain"
+    description: "Rain containing mud or sand particles."
+  sand_rain:
+    name: "&6Sand Rain"
+    description: "A rare phenomenon where sand falls with rain."
+
+  # Temperature-related phenomena
+  heat_wave:
+    name: "&cHeat Wave"
+    description: "A period of exceptionally hot weather."
+  cold_wave:
+    name: "&bCold Wave"
+    description: "A period of exceptionally cold weather."
+  frost_event:
+    name: "&bFrost"
+    description: "A phenomenon where water freezes on surfaces."
+  thaw:
+    name: "&aThaw"
+    description: "Ice and snow gradually melting."
+  heatstroke:
+    name: "&4Heatstroke"
+    description: "Extremely dangerous heat."
+
+  # Wind phenomena
+  light_breeze:
+    name: "&aLight Breeze"
+    description: "A gentle, pleasant breeze."
+  moderate_wind:
+    name: "&aModerate Wind"
+    description: "A noticeable but non-threatening wind."
+  strong_wind:
+    name: "&6Strong Wind"
+    description: "A powerful wind capable of disrupting activities."
+  gust:
+    name: "&6Gusts"
+    description: "Sudden increases in wind speed."
+  storm:
+    name: "&cStorm"
+    description: "A combination of violent winds and precipitation."
+  hurricane:
+    name: "&4Hurricane"
+    description: "An extremely violent tropical storm."
+  tornado:
+    name: "&4Tornado"
+    description: "A violent, destructive whirlwind."
+  waterspout:
+    name: "&9Waterspout"
+    description: "A tornado that forms over water."
+  sand_storm:
+    name: "&6Sandstorm"
+    description: "A violent wind carrying large amounts of sand."
+  dust_storm:
+    name: "&6Dust Storm"
+    description: "A violent wind carrying fine dust."
+  wind_blast:
+    name: "&6Wind Blast"
+    description: "A sudden and powerful gust of wind."
+  chinook:
+    name: "&cChinook"
+    description: "A warm, dry wind that descends a mountain slope."
+  monsoon:
+    name: "&9Monsoon"
+    description: "A season of abundant rainfall accompanied by winds."
+
+  # Electrical and light phenomena
+  thunderstorm:
+    name: "&5Thunderstorm"
+    description: "A storm with thunder, lightning, and rain."
+  lightning:
+    name: "&eLightning"
+    description: "Electrical discharges in the atmosphere."
+  thunder:
+    name: "&7Thunder"
+    description: "The sound produced by lightning, without precipitation."
+  st_elmo_fire:
+    name: "&dSt. Elmo's Fire"
+    description: "A light phenomenon that sometimes appears on pointed objects during a thunderstorm."
+  aurora:
+    name: "&dAurora"
+    description: "A natural light display in the night sky of polar regions."
+
+  # Visibility phenomena
+  fog:
+    name: "&7Fog"
+    description: "A condensation of water suspended in the air that reduces visibility."
+  mist:
+    name: "&7Mist"
+    description: "A light fog."
+  smog:
+    name: "&8Smog"
+    description: "A fog containing pollutants."
+  sea_mist:
+    name: "&7Sea Mist"
+    description: "A mist that forms over the ocean."
+  freezing_fog:
+    name: "&bFreezing Fog"
+    description: "A fog that freezes on contact with surfaces."
+  smoke:
+    name: "&8Smoke"
+    description: "Combustion particles suspended in the air."
+  dust_haze:
+    name: "&6Dust Haze"
+    description: "A haze containing dust particles in suspension."
+  volcanic_ash:
+    name: "&8Volcanic Ash"
+    description: "Ash ejected by an erupting volcano."
+
+  # Optical phenomena
+  rainbow:
+    name: "&dRainbow"
+    description: "A multicolored arc formed by the refraction of light in water droplets."
+  moonbow:
+    name: "&fLunar Rainbow"
+    description: "A rainbow formed by moonlight."
+  halo:
+    name: "&eHalo"
+    description: "A luminous ring around the sun or moon."
+  sundog:
+    name: "&eSun Dog"
+    description: "Bright spots that appear on either side of the sun."
+  light_pillar:
+    name: "&eLight Pillar"
+    description: "A vertical column of light that appears to rise from the sun or moon."
+  corona:
+    name: "&eCorona"
+    description: "A colored circle around the sun or moon."
+  crepuscular_ray:
+    name: "&eCrepuscular Ray"
+    description: "Rays of sunlight that stream through clouds or the horizon."
+  green_flash:
+    name: "&aGreen Flash"
+    description: "A rare optical phenomenon where a green flash appears at sunset."
+
+  # Sky conditions
+  clear_sky:
+    name: "&bClear Sky"
+    description: "A cloudless sky with excellent visibility."
+  partly_cloudy:
+    name: "&7Partly Cloudy"
+    description: "A sky with scattered clouds."
+  cloudy:
+    name: "&7Cloudy"
+    description: "A sky with many clouds but no precipitation."
+  overcast:
+    name: "&8Overcast"
+    description: "A sky completely covered with clouds."
+  threatening_sky:
+    name: "&8Threatening Sky"
+    description: "A dark sky that signals an imminent storm."
+
+  # Extreme or rare phenomena
+  tropical_cyclone:
+    name: "&4Tropical Cyclone"
+    description: "A massive rotative storm system with extremely violent winds."
+  firestorm:
+    name: "&cFirestorm"
+    description: "An intense fire that creates its own weather system."
+  storm_surge:
+    name: "&9Storm Surge"
+    description: "An abnormal rise in sea level caused by a storm."
+  avalanche:
+    name: "&fAvalanche"
+    description: "A mass of snow, ice, and rocks descending a mountain slope."
+  flash_flood:
+    name: "&9Flash Flood"
+    description: "A rapid and sudden rise of water."
+  acid_rain:
+    name: "&aAcid Rain"
+    description: "Rain containing acidic pollutants."
+  ice_fog:
+    name: "&bIce Fog"
+    description: "A fog composed of tiny suspended ice crystals."
+  colored_snow:
+    name: "&dColored Snow"
+    description: "Snow tinted by algae, pollen, or other substances."
+
+  # Night cycle
+  night_cycle:
+    name: "&9Night Cycle"
+    description: "The night period when weather phenomena are paused."
+
+# Season messages
+seasons:
+  change: "&6The season has changed: &f{season}"
+  set_success: "&aSeason set to &f{season}&a, day &f{day}&a."
+  set_error: "&cUnable to set season. An event may have canceled the change."
+
+  # Season names
+  spring:
+    name: "&aSpring"
+    description: "A season of renewal, with moderate temperatures and occasional rains."
+  summer:
+    name: "&6Summer"
+    description: "A warm season with long, sunny days."
+  autumn:
+    name: "&eAutumn"
+    description: "A cool season where leaves change color and fall."
+  winter:
+    name: "&bWinter"
+    description: "A cold season with short days and sometimes snow."
+
+# Effect messages
+effects:
+  heat_damage: "&cYou suffer from the intense heat!"
+  cold_damage: "&bYou suffer from the freezing cold!"
+  wind_damage: "&eYou are carried away by violent winds!"
+
+# Time messages
+time:
+  day: "&eIt is now day in &f{world}&e."
+  night: "&9It is now night in &f{world}&9."
